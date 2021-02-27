@@ -1,0 +1,2088 @@
+syntax = "proto3";
+
+message WFCMessage {
+}
+
+
+message AddFriendRequestOrBuilder {
+}
+
+
+message AddFriendRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object target_uid_ = 3;
+    Object reason_ = 4;
+    byte memoized_is_initialized = 5;
+    uint32 memoized_serialized_size = 6;
+    uint32 memoized_size = 7;
+}
+
+
+message ConversationOrBuilder {
+}
+
+
+message Conversation {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    uint32 type_ = 3;
+    Object target_ = 4;
+    uint32 line_ = 5;
+    byte memoized_is_initialized = 6;
+    uint32 memoized_serialized_size = 7;
+    uint32 memoized_size = 8;
+}
+
+
+message GroupInfoOrBuilder {
+}
+
+
+message GroupInfo {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object target_id_ = 3;
+    Object name_ = 4;
+    Object portrait_ = 5;
+    Object owner_ = 6;
+    uint32 type_ = 7;
+    uint32 member_count_ = 8;
+    Object extra_ = 9;
+    uint64 update_dt_ = 10;
+    uint64 member_update_dt_ = 11;
+    uint32 mute_ = 12;
+    uint32 join_type_ = 13;
+    uint32 private_chat_ = 14;
+    uint32 searchable_ = 15;
+    byte memoized_is_initialized = 16;
+    uint32 memoized_serialized_size = 17;
+    uint32 memoized_size = 18;
+}
+
+
+message GroupMemberOrBuilder {
+}
+
+
+message GroupMember {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object member_id_ = 3;
+    Object alias_ = 4;
+    uint32 type_ = 5;
+    uint64 update_dt_ = 6;
+    uint64 create_dt_ = 7;
+    byte memoized_is_initialized = 8;
+    uint32 memoized_serialized_size = 9;
+    uint32 memoized_size = 10;
+}
+
+
+message GroupOrBuilder {
+}
+
+
+message Group {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    GroupInfo group_info_ = 3;
+    repeated GroupMember members_ = 4;
+    byte memoized_is_initialized = 5;
+    uint32 memoized_serialized_size = 6;
+    uint32 memoized_size = 7;
+}
+
+
+message ChannelInfoOrBuilder {
+}
+
+
+message ChannelInfo {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object target_id_ = 3;
+    Object name_ = 4;
+    Object portrait_ = 5;
+    Object owner_ = 6;
+    uint32 status_ = 7;
+    Object desc_ = 8;
+    Object extra_ = 9;
+    uint64 update_dt_ = 10;
+    Object secret_ = 11;
+    Object callback_ = 12;
+    uint32 automatic_ = 13;
+    byte memoized_is_initialized = 14;
+    uint32 memoized_serialized_size = 15;
+    uint32 memoized_size = 16;
+}
+
+
+message ModifyChannelInfoOrBuilder {
+}
+
+
+message ModifyChannelInfo {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object channel_id_ = 3;
+    uint32 type_ = 4;
+    Object value_ = 5;
+    byte memoized_is_initialized = 6;
+    uint32 memoized_serialized_size = 7;
+    uint32 memoized_size = 8;
+}
+
+
+message TransferChannelOrBuilder {
+}
+
+
+message TransferChannel {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object channel_id_ = 3;
+    Object new_owner_ = 4;
+    byte memoized_is_initialized = 5;
+    uint32 memoized_serialized_size = 6;
+    uint32 memoized_size = 7;
+}
+
+
+message PullChannelInfoOrBuilder {
+}
+
+
+message PullChannelInfo {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object channel_id_ = 3;
+    uint64 head_ = 4;
+    byte memoized_is_initialized = 5;
+    uint32 memoized_serialized_size = 6;
+    uint32 memoized_size = 7;
+}
+
+
+message PullChannelListenerOrBuilder {
+}
+
+
+message PullChannelListener {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object channel_id_ = 3;
+    uint32 offset_ = 4;
+    uint32 count_ = 5;
+    byte memoized_is_initialized = 6;
+    uint32 memoized_serialized_size = 7;
+    uint32 memoized_size = 8;
+}
+
+
+message PullChannelListenerResultOrBuilder {
+}
+
+
+message PullChannelListenerResult {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    uint32 total_count_ = 3;
+    uint32 offset_ = 4;
+    LazyStringList listener_ = 5;
+    byte memoized_is_initialized = 6;
+    uint32 memoized_serialized_size = 7;
+    uint32 memoized_size = 8;
+}
+
+
+message ListenChannelOrBuilder {
+}
+
+
+message ListenChannel {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object channel_id_ = 3;
+    uint32 listen_ = 4;
+    byte memoized_is_initialized = 5;
+    uint32 memoized_serialized_size = 6;
+    uint32 memoized_size = 7;
+}
+
+
+message SearchChannelResultOrBuilder {
+}
+
+
+message SearchChannelResult {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    repeated ChannelInfo channel_ = 3;
+    Object keyword_ = 4;
+    byte memoized_is_initialized = 5;
+    uint32 memoized_serialized_size = 6;
+    uint32 memoized_size = 7;
+}
+
+
+message MessageContentOrBuilder {
+}
+
+
+message MessageContent {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    uint32 type_ = 3;
+    Object searchable_content_ = 4;
+    Object push_content_ = 5;
+    Object content_ = 6;
+    ByteString data_ = 7;
+    uint32 media_type_ = 8;
+    Object remote_media_url_ = 9;
+    uint32 persist_flag_ = 10;
+    uint32 expire_duration_ = 11;
+    uint32 mentioned_type_ = 12;
+    LazyStringList mentioned_target_ = 13;
+    Object extra_ = 14;
+    Object push_data_ = 15;
+    byte memoized_is_initialized = 16;
+    uint32 memoized_serialized_size = 17;
+    uint32 memoized_size = 18;
+}
+
+
+message AddGroupMemberRequestOrBuilder {
+}
+
+
+message AddGroupMemberRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object group_id_ = 3;
+    repeated GroupMember added_member_ = 4;
+    repeated uint32 to_line_ = 5;
+    MessageContent notify_content_ = 6;
+    byte memoized_is_initialized = 7;
+    uint32 memoized_serialized_size = 8;
+    uint32 memoized_size = 9;
+}
+
+
+message CreateGroupRequestOrBuilder {
+}
+
+
+message CreateGroupRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Group group_ = 3;
+    repeated uint32 to_line_ = 4;
+    MessageContent notify_content_ = 5;
+    byte memoized_is_initialized = 6;
+    uint32 memoized_serialized_size = 7;
+    uint32 memoized_size = 8;
+}
+
+
+message DismissGroupRequestOrBuilder {
+}
+
+
+message DismissGroupRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object group_id_ = 3;
+    repeated uint32 to_line_ = 4;
+    MessageContent notify_content_ = 5;
+    byte memoized_is_initialized = 6;
+    uint32 memoized_serialized_size = 7;
+    uint32 memoized_size = 8;
+}
+
+
+message FriendRequestOrBuilder {
+}
+
+
+message FriendRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object from_uid_ = 3;
+    Object to_uid_ = 4;
+    Object reason_ = 5;
+    uint32 status_ = 6;
+    uint64 update_dt_ = 7;
+    bool from_read_status_ = 8;
+    bool to_read_status_ = 9;
+    byte memoized_is_initialized = 10;
+    uint32 memoized_serialized_size = 11;
+    uint32 memoized_size = 12;
+}
+
+
+message GeneralResultOrBuilder {
+}
+
+
+message GeneralResult {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    uint32 error_code_ = 3;
+    byte memoized_is_initialized = 4;
+    uint32 memoized_serialized_size = 5;
+    uint32 memoized_size = 6;
+}
+
+
+message GetUploadTokenRequestOrBuilder {
+}
+
+
+message GetUploadTokenRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    uint32 media_type_ = 3;
+    Object media_path_ = 4;
+    byte memoized_is_initialized = 5;
+    uint32 memoized_serialized_size = 6;
+    uint32 memoized_size = 7;
+}
+
+
+message GetUploadTokenResultOrBuilder {
+}
+
+
+message GetUploadTokenResult {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object domain_ = 3;
+    Object token_ = 4;
+    Object server_ = 5;
+    uint32 port_ = 6;
+    byte memoized_is_initialized = 7;
+    uint32 memoized_serialized_size = 8;
+    uint32 memoized_size = 9;
+}
+
+
+message HandleFriendRequestOrBuilder {
+}
+
+
+message HandleFriendRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object target_uid_ = 3;
+    uint32 status_ = 4;
+    Object extra_ = 5;
+    byte memoized_is_initialized = 6;
+    uint32 memoized_serialized_size = 7;
+    uint32 memoized_size = 8;
+}
+
+
+message IDBufOrBuilder {
+}
+
+
+message IDBuf {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object id_ = 3;
+    byte memoized_is_initialized = 4;
+    uint32 memoized_serialized_size = 5;
+    uint32 memoized_size = 6;
+}
+
+
+message IDListBufOrBuilder {
+}
+
+
+message IDListBuf {
+    UnknownFieldSet unknown_fields = 1;
+    LazyStringList id_ = 2;
+    byte memoized_is_initialized = 3;
+    uint32 memoized_serialized_size = 4;
+    uint32 memoized_size = 5;
+}
+
+
+message MessageOrBuilder {
+}
+
+
+message Message {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Conversation conversation_ = 3;
+    Object from_user_ = 4;
+    MessageContent content_ = 5;
+    uint64 message_id_ = 6;
+    uint64 server_timestamp_ = 7;
+    Object to_user_ = 8;
+    LazyStringList to_ = 9;
+    byte memoized_is_initialized = 10;
+    uint32 memoized_serialized_size = 11;
+    uint32 memoized_size = 12;
+}
+
+
+message UserOrBuilder {
+}
+
+
+message User {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object uid_ = 3;
+    Object name_ = 4;
+    Object display_name_ = 5;
+    Object portrait_ = 6;
+    Object mobile_ = 7;
+    Object email_ = 8;
+    Object address_ = 9;
+    Object company_ = 10;
+    Object extra_ = 11;
+    uint64 update_dt_ = 12;
+    uint32 gender_ = 13;
+    Object social_ = 14;
+    uint32 type_ = 15;
+    uint32 deleted_ = 16;
+    byte memoized_is_initialized = 17;
+    uint32 memoized_serialized_size = 18;
+    uint32 memoized_size = 19;
+}
+
+
+message RobotOrBuilder {
+}
+
+
+message Robot {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object uid_ = 3;
+    uint32 state_ = 4;
+    Object owner_ = 5;
+    Object secret_ = 6;
+    Object callback_ = 7;
+    Object extra_ = 8;
+    byte memoized_is_initialized = 9;
+    uint32 memoized_serialized_size = 10;
+    uint32 memoized_size = 11;
+}
+
+
+message GetRobotsResultOrBuilder {
+}
+
+
+message GetRobotsResult {
+    UnknownFieldSet unknown_fields = 1;
+    repeated Robot entry_ = 2;
+    byte memoized_is_initialized = 3;
+    uint32 memoized_serialized_size = 4;
+    uint32 memoized_size = 5;
+}
+
+
+message UploadDeviceTokenRequestOrBuilder {
+}
+
+
+message UploadDeviceTokenRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    uint32 platform_ = 3;
+    Object app_name_ = 4;
+    Object device_token_ = 5;
+    uint32 push_type_ = 6;
+    byte memoized_is_initialized = 7;
+    uint32 memoized_serialized_size = 8;
+    uint32 memoized_size = 9;
+}
+
+
+message ModifyGroupInfoRequestOrBuilder {
+}
+
+
+message ModifyGroupInfoRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object group_id_ = 3;
+    uint32 type_ = 4;
+    Object value_ = 5;
+    repeated uint32 to_line_ = 6;
+    MessageContent notify_content_ = 7;
+    byte memoized_is_initialized = 8;
+    uint32 memoized_serialized_size = 9;
+    uint32 memoized_size = 10;
+}
+
+
+message SetGroupManagerRequestOrBuilder {
+}
+
+
+message SetGroupManagerRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object group_id_ = 3;
+    uint32 type_ = 4;
+    LazyStringList user_id_ = 5;
+    repeated uint32 to_line_ = 6;
+    MessageContent notify_content_ = 7;
+    byte memoized_is_initialized = 8;
+    uint32 memoized_serialized_size = 9;
+    uint32 memoized_size = 10;
+}
+
+
+message InfoEntryOrBuilder {
+}
+
+
+message InfoEntry {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    uint32 type_ = 3;
+    Object value_ = 4;
+    byte memoized_is_initialized = 5;
+    uint32 memoized_serialized_size = 6;
+    uint32 memoized_size = 7;
+}
+
+
+message ModifyMyInfoRequestOrBuilder {
+}
+
+
+message ModifyMyInfoRequest {
+    UnknownFieldSet unknown_fields = 1;
+    repeated InfoEntry entry_ = 2;
+    byte memoized_is_initialized = 3;
+    uint32 memoized_serialized_size = 4;
+    uint32 memoized_size = 5;
+}
+
+
+message NotifyMessageOrBuilder {
+}
+
+
+message NotifyMessage {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    uint32 type_ = 3;
+    uint64 head_ = 4;
+    Object target_ = 5;
+    byte memoized_is_initialized = 6;
+    uint32 memoized_serialized_size = 7;
+    uint32 memoized_size = 8;
+}
+
+
+message PullMessageRequestOrBuilder {
+}
+
+
+message PullMessageRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    uint64 id_ = 3;
+    uint32 type_ = 4;
+    uint64 delay_ = 5;
+    byte memoized_is_initialized = 6;
+    uint32 memoized_serialized_size = 7;
+    uint32 memoized_size = 8;
+}
+
+
+message PullMessageResultOrBuilder {
+}
+
+
+message PullMessageResult {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    repeated Message message_ = 3;
+    uint64 current_ = 4;
+    uint64 head_ = 5;
+    byte memoized_is_initialized = 6;
+    uint32 memoized_serialized_size = 7;
+    uint32 memoized_size = 8;
+}
+
+
+message PullGroupInfoResultOrBuilder {
+}
+
+
+message PullGroupInfoResult {
+    UnknownFieldSet unknown_fields = 1;
+    repeated GroupInfo info_ = 2;
+    byte memoized_is_initialized = 3;
+    uint32 memoized_serialized_size = 4;
+    uint32 memoized_size = 5;
+}
+
+
+message PullGroupMemberRequestOrBuilder {
+}
+
+
+message PullGroupMemberRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object target_ = 3;
+    uint64 head_ = 4;
+    byte memoized_is_initialized = 5;
+    uint32 memoized_serialized_size = 6;
+    uint32 memoized_size = 7;
+}
+
+
+message PullGroupMemberResultOrBuilder {
+}
+
+
+message PullGroupMemberResult {
+    UnknownFieldSet unknown_fields = 1;
+    repeated GroupMember member_ = 2;
+    byte memoized_is_initialized = 3;
+    uint32 memoized_serialized_size = 4;
+    uint32 memoized_size = 5;
+}
+
+
+message UserRequestOrBuilder {
+}
+
+
+message UserRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object uid_ = 3;
+    uint64 update_dt_ = 4;
+    byte memoized_is_initialized = 5;
+    uint32 memoized_serialized_size = 6;
+    uint32 memoized_size = 7;
+}
+
+
+message PullUserRequestOrBuilder {
+}
+
+
+message PullUserRequest {
+    UnknownFieldSet unknown_fields = 1;
+    repeated UserRequest request_ = 2;
+    byte memoized_is_initialized = 3;
+    uint32 memoized_serialized_size = 4;
+    uint32 memoized_size = 5;
+}
+
+
+message UserResultOrBuilder {
+}
+
+
+message UserResult {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    User user_ = 3;
+    uint32 code_ = 4;
+    byte memoized_is_initialized = 5;
+    uint32 memoized_serialized_size = 6;
+    uint32 memoized_size = 7;
+}
+
+
+message PullUserResultOrBuilder {
+}
+
+
+message PullUserResult {
+    UnknownFieldSet unknown_fields = 1;
+    repeated UserResult result_ = 2;
+    byte memoized_is_initialized = 3;
+    uint32 memoized_serialized_size = 4;
+    uint32 memoized_size = 5;
+}
+
+
+message QuitGroupRequestOrBuilder {
+}
+
+
+message QuitGroupRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object group_id_ = 3;
+    repeated uint32 to_line_ = 4;
+    MessageContent notify_content_ = 5;
+    byte memoized_is_initialized = 6;
+    uint32 memoized_serialized_size = 7;
+    uint32 memoized_size = 8;
+}
+
+
+message RemoveGroupMemberRequestOrBuilder {
+}
+
+
+message RemoveGroupMemberRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object group_id_ = 3;
+    LazyStringList removed_member_ = 4;
+    repeated uint32 to_line_ = 5;
+    MessageContent notify_content_ = 6;
+    byte memoized_is_initialized = 7;
+    uint32 memoized_serialized_size = 8;
+    uint32 memoized_size = 9;
+}
+
+
+message TransferGroupRequestOrBuilder {
+}
+
+
+message TransferGroupRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object group_id_ = 3;
+    Object new_owner_ = 4;
+    repeated uint32 to_line_ = 5;
+    MessageContent notify_content_ = 6;
+    byte memoized_is_initialized = 7;
+    uint32 memoized_serialized_size = 8;
+    uint32 memoized_size = 9;
+}
+
+
+message ModifyGroupMemberAliasOrBuilder {
+}
+
+
+message ModifyGroupMemberAlias {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object group_id_ = 3;
+    Object alias_ = 4;
+    repeated uint32 to_line_ = 5;
+    MessageContent notify_content_ = 6;
+    Object member_id_ = 7;
+    byte memoized_is_initialized = 8;
+    uint32 memoized_serialized_size = 9;
+    uint32 memoized_size = 10;
+}
+
+
+message UserSettingEntryOrBuilder {
+}
+
+
+message UserSettingEntry {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    uint32 scope_ = 3;
+    Object key_ = 4;
+    Object value_ = 5;
+    uint64 update_dt_ = 6;
+    byte memoized_is_initialized = 7;
+    uint32 memoized_serialized_size = 8;
+    uint32 memoized_size = 9;
+}
+
+
+message ModifyUserSettingReqOrBuilder {
+}
+
+
+message ModifyUserSettingReq {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    uint32 scope_ = 3;
+    Object key_ = 4;
+    Object value_ = 5;
+    byte memoized_is_initialized = 6;
+    uint32 memoized_serialized_size = 7;
+    uint32 memoized_size = 8;
+}
+
+
+message VersionOrBuilder {
+}
+
+
+message Version {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    uint64 version_ = 3;
+    byte memoized_is_initialized = 4;
+    uint32 memoized_serialized_size = 5;
+    uint32 memoized_size = 6;
+}
+
+
+message GetUserSettingResultOrBuilder {
+}
+
+
+message GetUserSettingResult {
+    UnknownFieldSet unknown_fields = 1;
+    repeated UserSettingEntry entry_ = 2;
+    byte memoized_is_initialized = 3;
+    uint32 memoized_serialized_size = 4;
+    uint32 memoized_size = 5;
+}
+
+
+message FriendOrBuilder {
+}
+
+
+message Friend {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object uid_ = 3;
+    uint32 state_ = 4;
+    uint64 update_dt_ = 5;
+    Object alias_ = 6;
+    uint32 blacked_ = 7;
+    Object extra_ = 8;
+    byte memoized_is_initialized = 9;
+    uint32 memoized_serialized_size = 10;
+    uint32 memoized_size = 11;
+}
+
+
+message GetFriendsResultOrBuilder {
+}
+
+
+message GetFriendsResult {
+    UnknownFieldSet unknown_fields = 1;
+    repeated Friend entry_ = 2;
+    byte memoized_is_initialized = 3;
+    uint32 memoized_serialized_size = 4;
+    uint32 memoized_size = 5;
+}
+
+
+message GetFriendRequestResultOrBuilder {
+}
+
+
+message GetFriendRequestResult {
+    UnknownFieldSet unknown_fields = 1;
+    repeated FriendRequest entry_ = 2;
+    byte memoized_is_initialized = 3;
+    uint32 memoized_serialized_size = 4;
+    uint32 memoized_size = 5;
+}
+
+
+message ConnectAckPayloadOrBuilder {
+}
+
+
+message ConnectAckPayload {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    uint64 msg_head_ = 3;
+    uint64 friend_head_ = 4;
+    uint64 friend_rq_head_ = 5;
+    uint64 setting_head_ = 6;
+    Object node_addr_ = 7;
+    uint32 node_port_ = 8;
+    uint64 server_time_ = 9;
+    byte memoized_is_initialized = 10;
+    uint32 memoized_serialized_size = 11;
+    uint32 memoized_size = 12;
+}
+
+
+message IMHttpWrapperOrBuilder {
+}
+
+
+message IMHttpWrapper {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object token_ = 3;
+    Object client_id_ = 4;
+    Object request_ = 5;
+    ByteString data_ = 6;
+    byte memoized_is_initialized = 7;
+    uint32 memoized_serialized_size = 8;
+    uint32 memoized_size = 9;
+}
+
+
+message SearchUserRequestOrBuilder {
+}
+
+
+message SearchUserRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object keyword_ = 3;
+    uint32 fuzzy_ = 4;
+    uint32 page_ = 5;
+    byte memoized_is_initialized = 6;
+    uint32 memoized_serialized_size = 7;
+    uint32 memoized_size = 8;
+}
+
+
+message SearchUserResultOrBuilder {
+}
+
+
+message SearchUserResult {
+    UnknownFieldSet unknown_fields = 1;
+    repeated User entry_ = 2;
+    byte memoized_is_initialized = 3;
+    uint32 memoized_serialized_size = 4;
+    uint32 memoized_size = 5;
+}
+
+
+message GetChatroomInfoRequestOrBuilder {
+}
+
+
+message GetChatroomInfoRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object chatroom_id_ = 3;
+    uint64 update_dt_ = 4;
+    byte memoized_is_initialized = 5;
+    uint32 memoized_serialized_size = 6;
+    uint32 memoized_size = 7;
+}
+
+
+message ChatroomInfoOrBuilder {
+}
+
+
+message ChatroomInfo {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object title_ = 3;
+    Object desc_ = 4;
+    Object portrait_ = 5;
+    uint32 member_count_ = 6;
+    uint64 create_dt_ = 7;
+    uint64 update_dt_ = 8;
+    Object extra_ = 9;
+    uint32 state_ = 10;
+    byte memoized_is_initialized = 11;
+    uint32 memoized_serialized_size = 12;
+    uint32 memoized_size = 13;
+}
+
+
+message GetChatroomMemberInfoRequestOrBuilder {
+}
+
+
+message GetChatroomMemberInfoRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object chatroom_id_ = 3;
+    uint32 max_count_ = 4;
+    byte memoized_is_initialized = 5;
+    uint32 memoized_serialized_size = 6;
+    uint32 memoized_size = 7;
+}
+
+
+message ChatroomMemberInfoOrBuilder {
+}
+
+
+message ChatroomMemberInfo {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    uint32 member_count_ = 3;
+    LazyStringList members_ = 4;
+    byte memoized_is_initialized = 5;
+    uint32 memoized_serialized_size = 6;
+    uint32 memoized_size = 7;
+}
+
+
+message INT64BufOrBuilder {
+}
+
+
+message INT64Buf {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    uint64 id_ = 3;
+    byte memoized_is_initialized = 4;
+    uint32 memoized_serialized_size = 5;
+    uint32 memoized_size = 6;
+}
+
+
+message NotifyRecallMessageOrBuilder {
+}
+
+
+message NotifyRecallMessage {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    uint64 id_ = 3;
+    Object from_user_ = 4;
+    byte memoized_is_initialized = 5;
+    uint32 memoized_serialized_size = 6;
+    uint32 memoized_size = 7;
+}
+
+
+message BlackUserRequestOrBuilder {
+}
+
+
+message BlackUserRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object uid_ = 3;
+    uint32 status_ = 4;
+    byte memoized_is_initialized = 5;
+    uint32 memoized_serialized_size = 6;
+    uint32 memoized_size = 7;
+}
+
+
+message RouteRequestOrBuilder {
+}
+
+
+message RouteRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object app_ = 3;
+    uint32 platform_ = 4;
+    uint32 push_type_ = 5;
+    Object device_name_ = 6;
+    Object device_version_ = 7;
+    Object phone_name_ = 8;
+    Object language_ = 9;
+    Object carrier_name_ = 10;
+    Object app_version_ = 11;
+    Object sdk_version_ = 12;
+    byte memoized_is_initialized = 13;
+    uint32 memoized_serialized_size = 14;
+    uint32 memoized_size = 15;
+}
+
+
+message RouteResponseOrBuilder {
+}
+
+
+message RouteResponse {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object host_ = 3;
+    uint32 long_port_ = 4;
+    uint32 short_port_ = 5;
+    byte memoized_is_initialized = 6;
+    uint32 memoized_serialized_size = 7;
+    uint32 memoized_size = 8;
+}
+
+
+message GetTokenRequestOrBuilder {
+}
+
+
+message GetTokenRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object user_id_ = 3;
+    Object client_id_ = 4;
+    uint32 platform_ = 5;
+    byte memoized_is_initialized = 6;
+    uint32 memoized_serialized_size = 7;
+    uint32 memoized_size = 8;
+}
+
+
+message LoadRemoteMessagesOrBuilder {
+}
+
+
+message LoadRemoteMessages {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Conversation conversation_ = 3;
+    uint64 before_uid_ = 4;
+    uint32 count_ = 5;
+    byte memoized_is_initialized = 6;
+    uint32 memoized_serialized_size = 7;
+    uint32 memoized_size = 8;
+}
+
+
+message MultiCastMessageOrBuilder {
+}
+
+
+message MultiCastMessage {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    Object from_user_ = 3;
+    MessageContent content_ = 4;
+    LazyStringList to_ = 5;
+    uint32 line_ = 6;
+    byte memoized_is_initialized = 7;
+    uint32 memoized_serialized_size = 8;
+    uint32 memoized_size = 9;
+}
+
+
+message RecallMultiCastMessageRequestOrBuilder {
+}
+
+
+message RecallMultiCastMessageRequest {
+    UnknownFieldSet unknown_fields = 1;
+    uint32 bit_field0_ = 2;
+    uint64 message_id_ = 3;
+    LazyStringList receiver_ = 4;
+    byte memoized_is_initialized = 5;
+    uint32 memoized_serialized_size = 6;
+    uint32 memoized_size = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object target_uid_ = 2;
+    Object reason_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    uint32 type_ = 2;
+    Object target_ = 3;
+    uint32 line_ = 4;
+    BuilderParent builder_parent = 5;
+    BuilderParentImpl me_as_parent = 6;
+    bool is_clean = 7;
+    UnknownFieldSet unknown_fields = 8;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object target_id_ = 2;
+    Object name_ = 3;
+    Object portrait_ = 4;
+    Object owner_ = 5;
+    uint32 type_ = 6;
+    uint32 member_count_ = 7;
+    Object extra_ = 8;
+    uint64 update_dt_ = 9;
+    uint64 member_update_dt_ = 10;
+    uint32 mute_ = 11;
+    uint32 join_type_ = 12;
+    uint32 private_chat_ = 13;
+    uint32 searchable_ = 14;
+    BuilderParent builder_parent = 15;
+    BuilderParentImpl me_as_parent = 16;
+    bool is_clean = 17;
+    UnknownFieldSet unknown_fields = 18;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object member_id_ = 2;
+    Object alias_ = 3;
+    uint32 type_ = 4;
+    uint64 update_dt_ = 5;
+    uint64 create_dt_ = 6;
+    BuilderParent builder_parent = 7;
+    BuilderParentImpl me_as_parent = 8;
+    bool is_clean = 9;
+    UnknownFieldSet unknown_fields = 10;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    GroupInfo group_info_ = 2;
+    SingleFieldBuilder<GroupInfo, Builder, GroupInfoOrBuilder> group_info_builder_ = 3;
+    repeated GroupMember members_ = 4;
+    RepeatedFieldBuilder<GroupMember, Builder, GroupMemberOrBuilder> members_builder_ = 5;
+    BuilderParent builder_parent = 6;
+    BuilderParentImpl me_as_parent = 7;
+    bool is_clean = 8;
+    UnknownFieldSet unknown_fields = 9;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object target_id_ = 2;
+    Object name_ = 3;
+    Object portrait_ = 4;
+    Object owner_ = 5;
+    uint32 status_ = 6;
+    Object desc_ = 7;
+    Object extra_ = 8;
+    uint64 update_dt_ = 9;
+    Object secret_ = 10;
+    Object callback_ = 11;
+    uint32 automatic_ = 12;
+    BuilderParent builder_parent = 13;
+    BuilderParentImpl me_as_parent = 14;
+    bool is_clean = 15;
+    UnknownFieldSet unknown_fields = 16;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object channel_id_ = 2;
+    uint32 type_ = 3;
+    Object value_ = 4;
+    BuilderParent builder_parent = 5;
+    BuilderParentImpl me_as_parent = 6;
+    bool is_clean = 7;
+    UnknownFieldSet unknown_fields = 8;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object channel_id_ = 2;
+    Object new_owner_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object channel_id_ = 2;
+    uint64 head_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object channel_id_ = 2;
+    uint32 offset_ = 3;
+    uint32 count_ = 4;
+    BuilderParent builder_parent = 5;
+    BuilderParentImpl me_as_parent = 6;
+    bool is_clean = 7;
+    UnknownFieldSet unknown_fields = 8;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    uint32 total_count_ = 2;
+    uint32 offset_ = 3;
+    LazyStringList listener_ = 4;
+    BuilderParent builder_parent = 5;
+    BuilderParentImpl me_as_parent = 6;
+    bool is_clean = 7;
+    UnknownFieldSet unknown_fields = 8;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object channel_id_ = 2;
+    uint32 listen_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    repeated ChannelInfo channel_ = 2;
+    RepeatedFieldBuilder<ChannelInfo, Builder, ChannelInfoOrBuilder> channel_builder_ = 3;
+    Object keyword_ = 4;
+    BuilderParent builder_parent = 5;
+    BuilderParentImpl me_as_parent = 6;
+    bool is_clean = 7;
+    UnknownFieldSet unknown_fields = 8;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    uint32 type_ = 2;
+    Object searchable_content_ = 3;
+    Object push_content_ = 4;
+    Object content_ = 5;
+    ByteString data_ = 6;
+    uint32 media_type_ = 7;
+    Object remote_media_url_ = 8;
+    uint32 persist_flag_ = 9;
+    uint32 expire_duration_ = 10;
+    uint32 mentioned_type_ = 11;
+    LazyStringList mentioned_target_ = 12;
+    Object extra_ = 13;
+    Object push_data_ = 14;
+    BuilderParent builder_parent = 15;
+    BuilderParentImpl me_as_parent = 16;
+    bool is_clean = 17;
+    UnknownFieldSet unknown_fields = 18;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object group_id_ = 2;
+    repeated GroupMember added_member_ = 3;
+    RepeatedFieldBuilder<GroupMember, Builder, GroupMemberOrBuilder> added_member_builder_ = 4;
+    repeated uint32 to_line_ = 5;
+    MessageContent notify_content_ = 6;
+    SingleFieldBuilder<MessageContent, Builder, MessageContentOrBuilder> notify_content_builder_ = 7;
+    BuilderParent builder_parent = 8;
+    BuilderParentImpl me_as_parent = 9;
+    bool is_clean = 10;
+    UnknownFieldSet unknown_fields = 11;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Group group_ = 2;
+    SingleFieldBuilder<Group, Builder, GroupOrBuilder> group_builder_ = 3;
+    repeated uint32 to_line_ = 4;
+    MessageContent notify_content_ = 5;
+    SingleFieldBuilder<MessageContent, Builder, MessageContentOrBuilder> notify_content_builder_ = 6;
+    BuilderParent builder_parent = 7;
+    BuilderParentImpl me_as_parent = 8;
+    bool is_clean = 9;
+    UnknownFieldSet unknown_fields = 10;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object group_id_ = 2;
+    repeated uint32 to_line_ = 3;
+    MessageContent notify_content_ = 4;
+    SingleFieldBuilder<MessageContent, Builder, MessageContentOrBuilder> notify_content_builder_ = 5;
+    BuilderParent builder_parent = 6;
+    BuilderParentImpl me_as_parent = 7;
+    bool is_clean = 8;
+    UnknownFieldSet unknown_fields = 9;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object from_uid_ = 2;
+    Object to_uid_ = 3;
+    Object reason_ = 4;
+    uint32 status_ = 5;
+    uint64 update_dt_ = 6;
+    bool from_read_status_ = 7;
+    bool to_read_status_ = 8;
+    BuilderParent builder_parent = 9;
+    BuilderParentImpl me_as_parent = 10;
+    bool is_clean = 11;
+    UnknownFieldSet unknown_fields = 12;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    uint32 error_code_ = 2;
+    BuilderParent builder_parent = 3;
+    BuilderParentImpl me_as_parent = 4;
+    bool is_clean = 5;
+    UnknownFieldSet unknown_fields = 6;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    uint32 media_type_ = 2;
+    Object media_path_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object domain_ = 2;
+    Object token_ = 3;
+    Object server_ = 4;
+    uint32 port_ = 5;
+    BuilderParent builder_parent = 6;
+    BuilderParentImpl me_as_parent = 7;
+    bool is_clean = 8;
+    UnknownFieldSet unknown_fields = 9;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object target_uid_ = 2;
+    uint32 status_ = 3;
+    Object extra_ = 4;
+    BuilderParent builder_parent = 5;
+    BuilderParentImpl me_as_parent = 6;
+    bool is_clean = 7;
+    UnknownFieldSet unknown_fields = 8;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object id_ = 2;
+    BuilderParent builder_parent = 3;
+    BuilderParentImpl me_as_parent = 4;
+    bool is_clean = 5;
+    UnknownFieldSet unknown_fields = 6;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    LazyStringList id_ = 2;
+    BuilderParent builder_parent = 3;
+    BuilderParentImpl me_as_parent = 4;
+    bool is_clean = 5;
+    UnknownFieldSet unknown_fields = 6;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Conversation conversation_ = 2;
+    SingleFieldBuilder<Conversation, Builder, ConversationOrBuilder> conversation_builder_ = 3;
+    Object from_user_ = 4;
+    MessageContent content_ = 5;
+    SingleFieldBuilder<MessageContent, Builder, MessageContentOrBuilder> content_builder_ = 6;
+    uint64 message_id_ = 7;
+    uint64 server_timestamp_ = 8;
+    Object to_user_ = 9;
+    LazyStringList to_ = 10;
+    BuilderParent builder_parent = 11;
+    BuilderParentImpl me_as_parent = 12;
+    bool is_clean = 13;
+    UnknownFieldSet unknown_fields = 14;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object uid_ = 2;
+    Object name_ = 3;
+    Object display_name_ = 4;
+    Object portrait_ = 5;
+    Object mobile_ = 6;
+    Object email_ = 7;
+    Object address_ = 8;
+    Object company_ = 9;
+    Object extra_ = 10;
+    uint64 update_dt_ = 11;
+    uint32 gender_ = 12;
+    Object social_ = 13;
+    uint32 type_ = 14;
+    uint32 deleted_ = 15;
+    BuilderParent builder_parent = 16;
+    BuilderParentImpl me_as_parent = 17;
+    bool is_clean = 18;
+    UnknownFieldSet unknown_fields = 19;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object uid_ = 2;
+    uint32 state_ = 3;
+    Object owner_ = 4;
+    Object secret_ = 5;
+    Object callback_ = 6;
+    Object extra_ = 7;
+    BuilderParent builder_parent = 8;
+    BuilderParentImpl me_as_parent = 9;
+    bool is_clean = 10;
+    UnknownFieldSet unknown_fields = 11;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    repeated Robot entry_ = 2;
+    RepeatedFieldBuilder<Robot, Builder, RobotOrBuilder> entry_builder_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    uint32 platform_ = 2;
+    Object app_name_ = 3;
+    Object device_token_ = 4;
+    uint32 push_type_ = 5;
+    BuilderParent builder_parent = 6;
+    BuilderParentImpl me_as_parent = 7;
+    bool is_clean = 8;
+    UnknownFieldSet unknown_fields = 9;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object group_id_ = 2;
+    uint32 type_ = 3;
+    Object value_ = 4;
+    repeated uint32 to_line_ = 5;
+    MessageContent notify_content_ = 6;
+    SingleFieldBuilder<MessageContent, Builder, MessageContentOrBuilder> notify_content_builder_ = 7;
+    BuilderParent builder_parent = 8;
+    BuilderParentImpl me_as_parent = 9;
+    bool is_clean = 10;
+    UnknownFieldSet unknown_fields = 11;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object group_id_ = 2;
+    uint32 type_ = 3;
+    LazyStringList user_id_ = 4;
+    repeated uint32 to_line_ = 5;
+    MessageContent notify_content_ = 6;
+    SingleFieldBuilder<MessageContent, Builder, MessageContentOrBuilder> notify_content_builder_ = 7;
+    BuilderParent builder_parent = 8;
+    BuilderParentImpl me_as_parent = 9;
+    bool is_clean = 10;
+    UnknownFieldSet unknown_fields = 11;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    uint32 type_ = 2;
+    Object value_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    repeated InfoEntry entry_ = 2;
+    RepeatedFieldBuilder<InfoEntry, Builder, InfoEntryOrBuilder> entry_builder_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    uint32 type_ = 2;
+    uint64 head_ = 3;
+    Object target_ = 4;
+    BuilderParent builder_parent = 5;
+    BuilderParentImpl me_as_parent = 6;
+    bool is_clean = 7;
+    UnknownFieldSet unknown_fields = 8;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    uint64 id_ = 2;
+    uint32 type_ = 3;
+    uint64 delay_ = 4;
+    BuilderParent builder_parent = 5;
+    BuilderParentImpl me_as_parent = 6;
+    bool is_clean = 7;
+    UnknownFieldSet unknown_fields = 8;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    repeated Message message_ = 2;
+    RepeatedFieldBuilder<Message, Builder, MessageOrBuilder> message_builder_ = 3;
+    uint64 current_ = 4;
+    uint64 head_ = 5;
+    BuilderParent builder_parent = 6;
+    BuilderParentImpl me_as_parent = 7;
+    bool is_clean = 8;
+    UnknownFieldSet unknown_fields = 9;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    repeated GroupInfo info_ = 2;
+    RepeatedFieldBuilder<GroupInfo, Builder, GroupInfoOrBuilder> info_builder_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object target_ = 2;
+    uint64 head_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    repeated GroupMember member_ = 2;
+    RepeatedFieldBuilder<GroupMember, Builder, GroupMemberOrBuilder> member_builder_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object uid_ = 2;
+    uint64 update_dt_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    repeated UserRequest request_ = 2;
+    RepeatedFieldBuilder<UserRequest, Builder, UserRequestOrBuilder> request_builder_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    User user_ = 2;
+    SingleFieldBuilder<User, Builder, UserOrBuilder> user_builder_ = 3;
+    uint32 code_ = 4;
+    BuilderParent builder_parent = 5;
+    BuilderParentImpl me_as_parent = 6;
+    bool is_clean = 7;
+    UnknownFieldSet unknown_fields = 8;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    repeated UserResult result_ = 2;
+    RepeatedFieldBuilder<UserResult, Builder, UserResultOrBuilder> result_builder_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object group_id_ = 2;
+    repeated uint32 to_line_ = 3;
+    MessageContent notify_content_ = 4;
+    SingleFieldBuilder<MessageContent, Builder, MessageContentOrBuilder> notify_content_builder_ = 5;
+    BuilderParent builder_parent = 6;
+    BuilderParentImpl me_as_parent = 7;
+    bool is_clean = 8;
+    UnknownFieldSet unknown_fields = 9;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object group_id_ = 2;
+    LazyStringList removed_member_ = 3;
+    repeated uint32 to_line_ = 4;
+    MessageContent notify_content_ = 5;
+    SingleFieldBuilder<MessageContent, Builder, MessageContentOrBuilder> notify_content_builder_ = 6;
+    BuilderParent builder_parent = 7;
+    BuilderParentImpl me_as_parent = 8;
+    bool is_clean = 9;
+    UnknownFieldSet unknown_fields = 10;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object group_id_ = 2;
+    Object new_owner_ = 3;
+    repeated uint32 to_line_ = 4;
+    MessageContent notify_content_ = 5;
+    SingleFieldBuilder<MessageContent, Builder, MessageContentOrBuilder> notify_content_builder_ = 6;
+    BuilderParent builder_parent = 7;
+    BuilderParentImpl me_as_parent = 8;
+    bool is_clean = 9;
+    UnknownFieldSet unknown_fields = 10;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object group_id_ = 2;
+    Object alias_ = 3;
+    repeated uint32 to_line_ = 4;
+    MessageContent notify_content_ = 5;
+    SingleFieldBuilder<MessageContent, Builder, MessageContentOrBuilder> notify_content_builder_ = 6;
+    Object member_id_ = 7;
+    BuilderParent builder_parent = 8;
+    BuilderParentImpl me_as_parent = 9;
+    bool is_clean = 10;
+    UnknownFieldSet unknown_fields = 11;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    uint32 scope_ = 2;
+    Object key_ = 3;
+    Object value_ = 4;
+    uint64 update_dt_ = 5;
+    BuilderParent builder_parent = 6;
+    BuilderParentImpl me_as_parent = 7;
+    bool is_clean = 8;
+    UnknownFieldSet unknown_fields = 9;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    uint32 scope_ = 2;
+    Object key_ = 3;
+    Object value_ = 4;
+    BuilderParent builder_parent = 5;
+    BuilderParentImpl me_as_parent = 6;
+    bool is_clean = 7;
+    UnknownFieldSet unknown_fields = 8;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    uint64 version_ = 2;
+    BuilderParent builder_parent = 3;
+    BuilderParentImpl me_as_parent = 4;
+    bool is_clean = 5;
+    UnknownFieldSet unknown_fields = 6;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    repeated UserSettingEntry entry_ = 2;
+    RepeatedFieldBuilder<UserSettingEntry, Builder, UserSettingEntryOrBuilder> entry_builder_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object uid_ = 2;
+    uint32 state_ = 3;
+    uint64 update_dt_ = 4;
+    Object alias_ = 5;
+    uint32 blacked_ = 6;
+    Object extra_ = 7;
+    BuilderParent builder_parent = 8;
+    BuilderParentImpl me_as_parent = 9;
+    bool is_clean = 10;
+    UnknownFieldSet unknown_fields = 11;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    repeated Friend entry_ = 2;
+    RepeatedFieldBuilder<Friend, Builder, FriendOrBuilder> entry_builder_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    repeated FriendRequest entry_ = 2;
+    RepeatedFieldBuilder<FriendRequest, Builder, FriendRequestOrBuilder> entry_builder_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    uint64 msg_head_ = 2;
+    uint64 friend_head_ = 3;
+    uint64 friend_rq_head_ = 4;
+    uint64 setting_head_ = 5;
+    Object node_addr_ = 6;
+    uint32 node_port_ = 7;
+    uint64 server_time_ = 8;
+    BuilderParent builder_parent = 9;
+    BuilderParentImpl me_as_parent = 10;
+    bool is_clean = 11;
+    UnknownFieldSet unknown_fields = 12;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object token_ = 2;
+    Object client_id_ = 3;
+    Object request_ = 4;
+    ByteString data_ = 5;
+    BuilderParent builder_parent = 6;
+    BuilderParentImpl me_as_parent = 7;
+    bool is_clean = 8;
+    UnknownFieldSet unknown_fields = 9;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object keyword_ = 2;
+    uint32 fuzzy_ = 3;
+    uint32 page_ = 4;
+    BuilderParent builder_parent = 5;
+    BuilderParentImpl me_as_parent = 6;
+    bool is_clean = 7;
+    UnknownFieldSet unknown_fields = 8;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    repeated User entry_ = 2;
+    RepeatedFieldBuilder<User, Builder, UserOrBuilder> entry_builder_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object chatroom_id_ = 2;
+    uint64 update_dt_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object title_ = 2;
+    Object desc_ = 3;
+    Object portrait_ = 4;
+    uint32 member_count_ = 5;
+    uint64 create_dt_ = 6;
+    uint64 update_dt_ = 7;
+    Object extra_ = 8;
+    uint32 state_ = 9;
+    BuilderParent builder_parent = 10;
+    BuilderParentImpl me_as_parent = 11;
+    bool is_clean = 12;
+    UnknownFieldSet unknown_fields = 13;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object chatroom_id_ = 2;
+    uint32 max_count_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    uint32 member_count_ = 2;
+    LazyStringList members_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    uint64 id_ = 2;
+    BuilderParent builder_parent = 3;
+    BuilderParentImpl me_as_parent = 4;
+    bool is_clean = 5;
+    UnknownFieldSet unknown_fields = 6;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    uint64 id_ = 2;
+    Object from_user_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object uid_ = 2;
+    uint32 status_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object app_ = 2;
+    uint32 platform_ = 3;
+    uint32 push_type_ = 4;
+    Object device_name_ = 5;
+    Object device_version_ = 6;
+    Object phone_name_ = 7;
+    Object language_ = 8;
+    Object carrier_name_ = 9;
+    Object app_version_ = 10;
+    Object sdk_version_ = 11;
+    BuilderParent builder_parent = 12;
+    BuilderParentImpl me_as_parent = 13;
+    bool is_clean = 14;
+    UnknownFieldSet unknown_fields = 15;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object host_ = 2;
+    uint32 long_port_ = 3;
+    uint32 short_port_ = 4;
+    BuilderParent builder_parent = 5;
+    BuilderParentImpl me_as_parent = 6;
+    bool is_clean = 7;
+    UnknownFieldSet unknown_fields = 8;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object user_id_ = 2;
+    Object client_id_ = 3;
+    uint32 platform_ = 4;
+    BuilderParent builder_parent = 5;
+    BuilderParentImpl me_as_parent = 6;
+    bool is_clean = 7;
+    UnknownFieldSet unknown_fields = 8;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Conversation conversation_ = 2;
+    SingleFieldBuilder<Conversation, Builder, ConversationOrBuilder> conversation_builder_ = 3;
+    uint64 before_uid_ = 4;
+    uint32 count_ = 5;
+    BuilderParent builder_parent = 6;
+    BuilderParentImpl me_as_parent = 7;
+    bool is_clean = 8;
+    UnknownFieldSet unknown_fields = 9;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    Object from_user_ = 2;
+    MessageContent content_ = 3;
+    SingleFieldBuilder<MessageContent, Builder, MessageContentOrBuilder> content_builder_ = 4;
+    LazyStringList to_ = 5;
+    uint32 line_ = 6;
+    BuilderParent builder_parent = 7;
+    BuilderParentImpl me_as_parent = 8;
+    bool is_clean = 9;
+    UnknownFieldSet unknown_fields = 10;
+}
+
+
+message Builder {
+    uint32 bit_field0_ = 1;
+    uint64 message_id_ = 2;
+    LazyStringList receiver_ = 3;
+    BuilderParent builder_parent = 4;
+    BuilderParentImpl me_as_parent = 5;
+    bool is_clean = 6;
+    UnknownFieldSet unknown_fields = 7;
+}
+

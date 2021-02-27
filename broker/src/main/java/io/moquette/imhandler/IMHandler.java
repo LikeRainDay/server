@@ -42,7 +42,6 @@ import static cn.wildfirechat.common.ErrorCode.ERROR_CODE_SUCCESS;
 /**
  * 请求处理接口<br>
  * 当用户请求某个Topic，则调用相应Handler的handle方法
- *
  */
 
 abstract public class IMHandler<T> {
@@ -86,10 +85,10 @@ abstract public class IMHandler<T> {
             }
 
             Type t = getClass().getGenericSuperclass();
-            ParameterizedType p = (ParameterizedType) t ;
+            ParameterizedType p = (ParameterizedType) t;
             Class<T> c = (Class<T>) p.getActualTypeArguments()[0];
             dataCls = c;
-            
+
             if (dataCls.getSuperclass().equals(GeneratedMessage.class)) {
                 parseDataMethod = dataCls.getMethod("parseFrom", byte[].class);
             } else if (dataCls.isPrimitive()) {
@@ -111,12 +110,12 @@ abstract public class IMHandler<T> {
 
         if (dataCls == String.class) {
             String str = new String(bytes);
-            return (T)str;
+            return (T) str;
         }
 
         if (dataCls == Byte.class) {
             Byte b = bytes[0];
-            return (T)b;
+            return (T) b;
         }
 
         if (dataCls == Void.class) {
@@ -138,7 +137,7 @@ abstract public class IMHandler<T> {
 //         }
 
         //json ?
-        return (T)(new Gson().fromJson(new String(bytes), dataCls));
+        return (T) (new Gson().fromJson(new String(bytes), dataCls));
     }
 
     public static void init(IMessagesStore ms, ISessionsStore ss, MessagesPublisher p, ThreadPoolExecutorWrapper businessExecutor, Server server) {
@@ -152,7 +151,7 @@ abstract public class IMHandler<T> {
 
     public ErrorCode preAction(String clientID, String fromUser, String topic, Qos1PublishHandler.IMCallback callback) {
         LOG.info("imHandler fromUser={}, clientId={}, topic={}", fromUser, clientID, topic);
-        if(!mLimitCounter.isGranted(clientID + fromUser + topic)) {
+        if (!mLimitCounter.isGranted(clientID + fromUser + topic)) {
             ByteBuf ackPayload = Unpooled.buffer();
             ackPayload.ensureWritable(1).writeByte(ERROR_CODE_OVER_FREQUENCY.getCode());
             try {
@@ -166,7 +165,7 @@ abstract public class IMHandler<T> {
         return ErrorCode.ERROR_CODE_SUCCESS;
     }
 
-	public void doHandler(String clientID, String fromUser, String topic, byte[] payloadContent, Qos1PublishHandler.IMCallback callback, boolean isAdmin) {
+    public void doHandler(String clientID, String fromUser, String topic, byte[] payloadContent, Qos1PublishHandler.IMCallback callback, boolean isAdmin) {
         m_imBusinessExecutor.execute(() -> {
             Qos1PublishHandler.IMCallback callbackWrapper = new Qos1PublishHandler.IMCallback() {
                 @Override
@@ -227,11 +226,12 @@ abstract public class IMHandler<T> {
 
 
     @ActionMethod
-    abstract public ErrorCode action(ByteBuf ackPayload, String clientID, String fromUser, boolean isAdmin, T request, Qos1PublishHandler.IMCallback callback)   ;
+    abstract public ErrorCode action(ByteBuf ackPayload, String clientID, String fromUser, boolean isAdmin, T request, Qos1PublishHandler.IMCallback callback);
 
     public void afterAction(String clientID, String fromUser, String topic, Qos1PublishHandler.IMCallback callback) {
 
     }
+
     protected long publish(String username, String clientID, WFCMessage.Message message) {
         Set<String> notifyReceivers = new LinkedHashSet<>();
 
@@ -265,6 +265,7 @@ abstract public class IMHandler<T> {
         mServer.getImBusinessScheduler().execute(() -> publisher.publish2Receivers(updatedMessage, notifyReceivers, clientID, ProtoConstants.PullType.Pull_Normal));
         return notifyReceivers.size();
     }
+
     protected long publishRecallMultiCastMsg(long messageUid, List<String> receivers) {
         WFCMessage.Message updatedMessage = m_messagesStore.getMessage(messageUid);
 

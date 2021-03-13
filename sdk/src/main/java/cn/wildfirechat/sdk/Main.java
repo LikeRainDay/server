@@ -134,6 +134,43 @@ public class Main {
             System.exit(-1);
         }
 
+        InputOutputUserInfo updateUserInfo = new InputOutputUserInfo();
+        updateUserInfo.setUserId(System.currentTimeMillis()+"");
+        updateUserInfo.setDisplayName("updatedUserName");
+        updateUserInfo.setPortrait("updatedUserPortrait");
+        int updateUserFlag = ProtoConstants.UpdateUserInfoMask.Update_User_DisplayName | ProtoConstants.UpdateUserInfoMask.Update_User_Portrait;
+        IMResult<Void> result = UserAdmin.updateUserInfo(updateUserInfo, updateUserFlag);
+        if(result != null && result.getErrorCode() == ErrorCode.ERROR_CODE_NOT_EXIST) {
+            System.out.println("updateUserInfo success");
+        } else {
+            System.out.println("updateUserInfo failure");
+            System.exit(-1);
+        }
+
+        updateUserInfo.setUserId(userInfo.getUserId());
+        result = UserAdmin.updateUserInfo(updateUserInfo, updateUserFlag);
+        if(result != null && result.getErrorCode() == ErrorCode.ERROR_CODE_SUCCESS) {
+            System.out.println("updateUserInfo success");
+        } else {
+            System.out.println("updateUserInfo failure");
+            System.exit(-1);
+        }
+
+        IMResult<InputOutputUserInfo> resultGetUserInfo4 = UserAdmin.getUserByUserId(userInfo.getUserId());
+        if (resultGetUserInfo4 != null && resultGetUserInfo4.getErrorCode() == ErrorCode.ERROR_CODE_SUCCESS) {
+            if (userInfo.getUserId().equals(resultGetUserInfo4.getResult().getUserId())
+                && updateUserInfo.getDisplayName().equals(resultGetUserInfo4.getResult().getDisplayName())
+                && updateUserInfo.getPortrait().equals(resultGetUserInfo4.getResult().getPortrait())) {
+                System.out.println("get user info success");
+            } else {
+                System.out.println("get user info by userId failure");
+                System.exit(-1);
+            }
+        } else {
+            System.out.println("get user info by userId failure");
+            System.exit(-1);
+        }
+
         IMResult<OutputGetIMTokenData> resultGetToken = UserAdmin.getUserToken(userInfo.getUserId(), "client111", ProtoConstants.Platform.Platform_Android);
         if (resultGetToken != null && resultGetToken.getErrorCode() == ErrorCode.ERROR_CODE_SUCCESS) {
             System.out.println("get token success: " + resultGetToken.getResult().getToken());
@@ -331,17 +368,25 @@ public class Main {
         String alias = "hello" + System.currentTimeMillis();
         IMResult<Void> updateFriendAlias = RelationAdmin.updateFriendAlias("ff1", "ff2", alias);
         if (updateFriendAlias != null && updateFriendAlias.getErrorCode() == ErrorCode.ERROR_CODE_SUCCESS) {
-            System.out.println("update friend status success");
+            System.out.println("update friend alias success");
         } else {
-            System.out.println("update friend status failure");
+            System.out.println("update friend alias failure");
             System.exit(-1);
         }
 
         IMResult<OutputGetAlias> getFriendAlias = RelationAdmin.getFriendAlias("ff1", "ff2");
         if (getFriendAlias != null && getFriendAlias.getErrorCode() == ErrorCode.ERROR_CODE_SUCCESS && getFriendAlias.getResult().getAlias().equals(alias)) {
-            System.out.println("update friend status success");
+            System.out.println("get friend alias success");
         } else {
-            System.out.println("update friend status failure");
+            System.out.println("get friend alias failure");
+            System.exit(-1);
+        }
+
+        IMResult<RelationPojo> getRelation = RelationAdmin.getRelation("ff1", "ff2");
+        if (getRelation != null && getRelation.getErrorCode() == ErrorCode.ERROR_CODE_SUCCESS) {
+            System.out.println("get friend relation success");
+        } else {
+            System.out.println("get friend relation failure");
             System.exit(-1);
         }
     }
